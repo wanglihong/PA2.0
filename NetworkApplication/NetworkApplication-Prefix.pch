@@ -1,0 +1,51 @@
+//
+// Prefix header for all source files of the 'NetworkApplication' target in the 'NetworkApplication' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+#ifdef __OBJC__
+    #import "Party.h"
+    #import "UIImageView+WebCache.h"
+    #import "SDImageCache.h"
+    #import "SVProgressHUD.h"
+#endif
+
+#define __IPHONE5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+#define RGB(x,y,z) [UIColor colorWithRed:x/255.0 green:y/255.0 blue:z/255.0 alpha:1.0]
+#define RGBA(x,y,z,a) [UIColor colorWithRed:x/255.0 green:y/255.0 blue:z/255.0 alpha:a]
+
+#define _base_url @"http://catholic.cokepa.com" //@"http://www.cokepa.com" //
+#define _host @"catholic.cokepa.com" //@"www.cokepa.com" //
+
+//
+// Sina WeiBo appKey and appSecret
+//
+#define kWBSDKDemoAppKey @"2502612969"
+#define kWBSDKDemoAppSecret @"784239aa39675b2fd5992042b7f8881e"
+#define kWBRedirectURI @"http://letspa.umaman.com"
+
+//
+// Weixin appId
+//
+#define kWeixinAppId @"wxa9943872d55432a82012"
+
+
+#define COMBINE(a, b) [NSString stringWithFormat:@"%@%@", a, b]
+#define IMAGE(id) [NSString stringWithFormat:@"%@/gridfs/%@", _base_url, id]
+
+#define STRETCH_ABLE_IMAGE(n, l, t) [[UIImage imageNamed:n] stretchableImageWithLeftCapWidth:l topCapHeight:t]
+#define LOCAL_IMAGE(name, type) [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name ofType:type]]
+
+#define APP_DELEGATE (AppDelegate *)[UIApplication sharedApplication].delegate
+#define ROOT_VIEW_CONTROLLER ((AppDelegate *)[UIApplication sharedApplication].delegate).window.rootViewController
+#define TABBAR_VIEW_CONTROLLER (TabBarViewController *)( ( (AppDelegate *)[UIApplication sharedApplication].delegate ).window.rootViewController )

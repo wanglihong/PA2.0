@@ -1,0 +1,5 @@
+/* Localized versions of Info.plist keys */
+
+CFBundleDisplayName = "Let's PA 2.0";
+
+"name" = "Dennis Yang";
